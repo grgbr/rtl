@@ -23,7 +23,7 @@ class AxilSlaveBusMonitor(BusMonitor):
 		self._signals = [ "awready", "awvalid", "awaddr", "wready",
 		                  "wvalid", "wdata", "bvalid", "bresp",
 		                  "arready", "rvalid", "rdata", "rresp",
-		                  "oreg0", "oreg1", "oreg2" ]
+		                  "stor0_a", "stor1_a", "stor2_a" ]
 		BusMonitor.__init__(self, entity, "",
 		                    entity.aclk, reset_n=entity.areset_n)
 
@@ -244,13 +244,20 @@ class AxilSlaveTB:
 		self._entity.awvalid = 1
 		self._entity.awaddr  = addr
 
+		tmout = get_sim_time() + (100 * clk_t)
 		while True:
 			if int(self._entity.awready) == 1:
 				break
+			if get_sim_time() >= tmout:
+				self._omon.failure("Timeout while waiting for" \
+				                   " awready assertion")
+				return
+			yield Timer(clk_t / 16)
 
 		yield RisingEdge(self._entity.aclk)
 
 		self._entity.awvalid = 0
+
 
 	@cocotb.coroutine
 	def _wrxact_data_phase(self, data, delay):
@@ -261,13 +268,20 @@ class AxilSlaveTB:
 		self._entity.wvalid = 1
 		self._entity.wdata  = data
 
+		tmout = get_sim_time() + (100 * clk_t)
 		while True:
 			if int(self._entity.wready) == 1:
 				break
+			if get_sim_time() >= tmout:
+				self._omon.failure("Timeout while waiting for" \
+				                   " wready assertion")
+				return
+			yield Timer(clk_t / 16)
 
 		yield RisingEdge(self._entity.aclk)
 
 		self._entity.wvalid = 0
+
 
 	@cocotb.coroutine
 	def _wrxact_resp_phase(self, delay):
@@ -290,11 +304,9 @@ class AxilSlaveTB:
 
 		self._entity.bready = 0
 
+
 	@cocotb.coroutine
 	def wrxact(self, addr, addr_delay, data, data_delay, resp, resp_delay):
-		"""
-		AXI lite slave write transaction
-		"""
 		# validate preconditions
 		exp = { "name"    : "write transaction preconditions",
 		        "areset_n": BinaryValue(1),
@@ -329,17 +341,104 @@ class AxilSlaveTB:
 		        "bvalid"  : BinaryValue(0),
 		        "bready"  : BinaryValue(0),
                         "bresp"   : BinaryValue(resp, bits=2),
-                        "oreg0"   : self._entity.oreg0,
-		        "oreg1"   : self._entity.oreg1,
-		        "oreg2"   : self._entity.oreg2
+                        "stor0_a" : self._entity.stor0_a,
+		        "stor1_a" : self._entity.stor1_a,
+		        "stor2_a" : self._entity.stor2_a
 		}
 		if resp == 0:
 			exp["name"]  = "valid write transaction postconditions"
-			oreg         = "oreg" + str(int(addr) / 4)
-			exp[oreg]    = data
+			stor         = "stor" + str(int(addr) / 4) + "_a"
+			exp[stor]    = data
 		else:
 			exp["name"]  = "invalid write transaction " \
 			               "postconditions"
+		yield self.expect(exp)
+
+
+	@cocotb.coroutine
+	def _rdxact_addr_phase(self, addr, delay):
+		if (delay):
+		    yield Timer(delay)
+
+		# address phase
+		self._entity.arvalid = 1
+		self._entity.araddr  = addr
+
+		tmout = get_sim_time() + (100 * clk_t)
+		while True:
+			if int(self._entity.arready) == 1:
+				break
+			if get_sim_time() >= tmout:
+				self._omon.failure("Timeout while waiting for" \
+				                   " arready assertion")
+				return
+			yield Timer(clk_t / 16)
+
+		yield RisingEdge(self._entity.aclk)
+
+		self._entity.arvalid = 0
+
+
+	@cocotb.coroutine
+	def _rdxact_data_phase(self, output, delay):
+		if (delay):
+		    yield Timer(delay)
+
+		# data phase
+		self._entity.rready = 1
+
+		tmout = get_sim_time() + (100 * clk_t)
+		while True:
+			if int(self._entity.rvalid) == 1:
+				break
+			if get_sim_time() >= tmout:
+				self._omon.failure("Timeout while waiting for" \
+				                   " rvalid assertion")
+				return
+			yield Timer(clk_t / 16)
+
+		output["data"] = self._entity.rdata
+		output["resp"] = self._entity.rresp
+                
+		yield RisingEdge(self._entity.aclk)
+
+		self._entity.rready = 0
+
+
+	@cocotb.coroutine
+	def rdxact(self, addr, addr_delay, data, resp, data_delay):
+		# validate preconditions
+		exp = { "name"    : "read transaction preconditions",
+		        "areset_n": BinaryValue(1),
+		        "arvalid" : BinaryValue(0),
+		        "arready" : BinaryValue(1),
+		        "rvalid"  : BinaryValue(0),
+		        "rready"  : BinaryValue(0)
+		}
+		yield self.expect(exp)
+
+		addr = BinaryValue(addr, bits=32, bigEndian=False)
+		res = { }
+
+		addr_phase = cocotb.fork(self._rdxact_addr_phase(addr,
+		                                                 addr_delay))
+		yield self._rdxact_data_phase(res, data_delay)
+		yield addr_phase.join()
+                
+		# validate phases postconditions
+		exp = { "areset_n": BinaryValue(1),
+		        "arvalid" : BinaryValue(0),
+		        "arready" : BinaryValue(1),
+		        "araddr"  : addr,
+		        "rvalid"  : BinaryValue(0),
+		        "rready"  : BinaryValue(1),
+		        "rresp"   : BinaryValue(resp, bits=2)
+		}
+		if resp == 0:
+			exp["name"]  = "valid read transaction postconditions"
+			exp["rdata"] = BinaryValue(data, bits=32)
+		else:
+			exp["name"]  = "invalid read transaction postconditions"
 		yield self.expect(exp)
 
 
@@ -370,10 +469,37 @@ def axils_test_wrxact(dut, addr, resp, addr_delay, data_delay, resp_delay,
 		yield tb.wrxact(addr, addr_delay, data, data_delay, resp,
 		                resp_delay)
 		data = data + 1
-
 		for e in range(0, post_cycles):
 			yield RisingEdge(dut.aclk)
 
+
+@cocotb.coroutine
+def axils_test_rdxact(dut, addr, resp, addr_delay, data_delay, post_cycles):
+	""" AXI lite slave read transaction"""
+	tb = AxilSlaveTB(dut, exit_on_fail)
+	tb = AxilSlaveTB(dut, exit_on_fail)
+
+	yield tb.start(clk_t)
+
+	for t in range(0, xact_nr):
+		yield tb.rdxact(addr, 0, 0, resp, 0)
+		for e in range(0, post_cycles):
+			yield RisingEdge(dut.aclk)
+
+	data = random.getrandbits(32)
+        
+	yield tb.wrxact(addr, 0, data, 0, 0, 0)
+
+	for t in range(0, xact_nr - 1):
+		yield tb.rdxact(addr, 0, data, resp, 0)
+		for e in range(0, post_cycles):
+			yield RisingEdge(dut.aclk)
+		data = data + 1
+		yield tb.wrxact(addr, 0, data, 0, 0, 0)
+
+	yield tb.rdxact(addr, 0, data, resp, 0)
+	for e in range(0, post_cycles):
+		yield RisingEdge(dut.aclk)
 
 
 random.seed(time.time())
@@ -404,3 +530,11 @@ fact.add_option("resp_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
 fact.add_option("resp",        [3])
 fact.add_option("post_cycles", [0, 1, 4])
 fact.generate_tests("invalid_")
+
+fact = TestFactory(axils_test_rdxact)
+fact.add_option("addr",        [0, 4, 8])
+fact.add_option("addr_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
+fact.add_option("data_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
+fact.add_option("resp",        [0])
+fact.add_option("post_cycles", [0, 1, 4])
+fact.generate_tests("valid_")

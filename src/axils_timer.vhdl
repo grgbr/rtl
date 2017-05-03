@@ -53,51 +53,63 @@ architecture behaviour of axils_timer is
 		     rdata   : out std_logic_vector(31 downto 0);
 		     rresp   : out std_logic_vector(1 downto 0);
 
-		     wstat   : out axi_state;
+		     we      : out std_logic;
 		     wreg    : out natural range 0 to REG_NR - 1;
-		     wval    : out std_logic_vector(31 downto 0));
+		     wval    : out std_logic_vector(31 downto 0);
+		     rreg    : out natural range 0 to REG_NR - 1;
+		     rval    : in  std_logic_vector(31 downto 0));
 	end component axil_slave;
 
-	signal wstat: axi_state;
-	signal wreg : natural range 0 to 2;
-	signal wval : std_logic_vector(31 downto 0);
-	signal oreg0: std_logic_vector(31 downto 0);
-	signal oreg1: std_logic_vector(31 downto 0);
-	signal oreg2: std_logic_vector(31 downto 0);
+	signal we_a   : std_logic;
+	signal wreg_a : natural range 0 to 2;
+	signal wval_a : std_logic_vector(31 downto 0);
+	signal rreg_a : natural range 0 to 2;
+	signal rval_a : std_logic_vector(31 downto 0);
+
+	signal stor0_a: std_logic_vector(31 downto 0);
+	signal stor1_a: std_logic_vector(31 downto 0);
+	signal stor2_a: std_logic_vector(31 downto 0);
 begin
-	tmr : axil_slave generic map (REG_NR => 3)
-	                 port map (aclk, areset_n, awvalid, awready,
-	                           awaddr, awprot, wvalid, wready, wdata,
-	                           wstrb, bvalid, bready, bresp, arvalid,
-	                           arready, araddr, arprot, rvalid,
-	                           rready, rdata, rresp, wstat, wreg,
-	                           wval);
+	tmr_i : axil_slave generic map (REG_NR => 3)
+	                   port map (aclk, areset_n, awvalid, awready,
+	                             awaddr, awprot, wvalid, wready, wdata,
+	                             wstrb, bvalid, bready, bresp, arvalid,
+	                             arready, araddr, arprot, rvalid,
+	                             rready, rdata, rresp, we_a, wreg_a,
+	                             wval_a, rreg_a, rval_a);
 
-	write: process (wstat, wreg, wval) is
-	variable reg0: std_logic_vector(31 downto 0) := (others => '0');
-	variable reg1: std_logic_vector(31 downto 0) := (others => '0');
-	variable reg2: std_logic_vector(31 downto 0) := (others => '0');
+	comb: process (areset_n, we_a, wreg_a, wval_a, rreg_a) is
+	variable val_p : std_logic_vector(31 downto 0) := (others => '0');
+	variable reg0_p: std_logic_vector(31 downto 0) := (others => '0');
+	variable reg1_p: std_logic_vector(31 downto 0) := (others => '0');
+	variable reg2_p: std_logic_vector(31 downto 0) := (others => '0');
 	begin
-		case (wstat) is
-		when AXI_STAT_RST =>
-			reg0 := (others => '0');
-			reg1 := (others => '0');
-			reg2 := (others => '0');
+		if (areset_n = '0') then
+			val_p  := (others => '0');
+			reg0_p := (others => '0');
+			reg1_p := (others => '0');
+			reg2_p := (others => '0');
+		else
+			if (rising_edge(we_a)) then
+				case (wreg_a) is
+					when 0      => reg0_p := wval_a;
+					when 1      => reg1_p := wval_a;
+					when 2      => reg2_p := wval_a;
+					when others => NULL;
+				end case;
+			end if;
 
-		when AXI_STAT_WR =>
-			case (wreg) is
-				when 0      => reg0 := wval;
-				when 1      => reg1 := wval;
-				when 2      => reg2 := wval;
+			case (rreg_a) is
+				when 0      => val_p := reg0_p;
+				when 1      => val_p := reg1_p;
+				when 2      => val_p := reg2_p;
 				when others => NULL;
 			end case;
+		end if;
 
-		-- also process AXI_STAT_IDLE state
-		when others => NULL;
-		end case;
-
-		oreg0 <= reg0;
-		oreg1 <= reg1;
-		oreg2 <= reg2;
-	end process write;
+		rval_a  <= val_p;
+		stor0_a <= reg0_p;
+		stor1_a <= reg1_p;
+		stor2_a <= reg2_p;
+	end process comb;
 end architecture behaviour;

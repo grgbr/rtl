@@ -1,26 +1,28 @@
 [*]
 [*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
-[*] Wed Apr 26 13:25:28 2017
+[*] Wed May  3 16:16:06 2017
 [*]
 [dumpfile] "/home/greg/dev/rtl/build/axils_timer_cosim.ghw"
-[dumpfile_mtime] "Wed Apr 26 13:25:08 2017"
-[dumpfile_size] 2339
+[dumpfile_mtime] "Wed May  3 16:10:56 2017"
+[dumpfile_size] 3875
 [savefile] "/home/greg/dev/rtl/test/axils_timer_cosim.gtkw"
 [timestart] 0
 [size] 1855 1056
 [pos] -1 -1
-*-20.889027 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-21.475618 4476244 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.axils_timer.
-[treeopen] top.axils_timer.tmr.
-[sst_width] 225
-[signals_width] 150
-[sst_expanded] 1
+[treeopen] top.axils_timer.tmr_i.
+[sst_width] 43
+[signals_width] 227
+[sst_expanded] 0
 [sst_vpaned_height] 500
 @28
 top.axils_timer.areset_n
+@29
 top.axils_timer.aclk
 @200
+-
 -AXI Address
 @28
 top.axils_timer.awvalid
@@ -28,6 +30,14 @@ top.axils_timer.awready
 @22
 #{top.axils_timer.awaddr[31:0]} top.axils_timer.awaddr[31] top.axils_timer.awaddr[30] top.axils_timer.awaddr[29] top.axils_timer.awaddr[28] top.axils_timer.awaddr[27] top.axils_timer.awaddr[26] top.axils_timer.awaddr[25] top.axils_timer.awaddr[24] top.axils_timer.awaddr[23] top.axils_timer.awaddr[22] top.axils_timer.awaddr[21] top.axils_timer.awaddr[20] top.axils_timer.awaddr[19] top.axils_timer.awaddr[18] top.axils_timer.awaddr[17] top.axils_timer.awaddr[16] top.axils_timer.awaddr[15] top.axils_timer.awaddr[14] top.axils_timer.awaddr[13] top.axils_timer.awaddr[12] top.axils_timer.awaddr[11] top.axils_timer.awaddr[10] top.axils_timer.awaddr[9] top.axils_timer.awaddr[8] top.axils_timer.awaddr[7] top.axils_timer.awaddr[6] top.axils_timer.awaddr[5] top.axils_timer.awaddr[4] top.axils_timer.awaddr[3] top.axils_timer.awaddr[2] top.axils_timer.awaddr[1] top.axils_timer.awaddr[0]
 @200
+-
+@28
+top.axils_timer.tmr_i.arvalid
+top.axils_timer.tmr_i.arready
+@22
+#{top.axils_timer.tmr_i.araddr[31:0]} top.axils_timer.tmr_i.araddr[31] top.axils_timer.tmr_i.araddr[30] top.axils_timer.tmr_i.araddr[29] top.axils_timer.tmr_i.araddr[28] top.axils_timer.tmr_i.araddr[27] top.axils_timer.tmr_i.araddr[26] top.axils_timer.tmr_i.araddr[25] top.axils_timer.tmr_i.araddr[24] top.axils_timer.tmr_i.araddr[23] top.axils_timer.tmr_i.araddr[22] top.axils_timer.tmr_i.araddr[21] top.axils_timer.tmr_i.araddr[20] top.axils_timer.tmr_i.araddr[19] top.axils_timer.tmr_i.araddr[18] top.axils_timer.tmr_i.araddr[17] top.axils_timer.tmr_i.araddr[16] top.axils_timer.tmr_i.araddr[15] top.axils_timer.tmr_i.araddr[14] top.axils_timer.tmr_i.araddr[13] top.axils_timer.tmr_i.araddr[12] top.axils_timer.tmr_i.araddr[11] top.axils_timer.tmr_i.araddr[10] top.axils_timer.tmr_i.araddr[9] top.axils_timer.tmr_i.araddr[8] top.axils_timer.tmr_i.araddr[7] top.axils_timer.tmr_i.araddr[6] top.axils_timer.tmr_i.araddr[5] top.axils_timer.tmr_i.araddr[4] top.axils_timer.tmr_i.araddr[3] top.axils_timer.tmr_i.araddr[2] top.axils_timer.tmr_i.araddr[1] top.axils_timer.tmr_i.araddr[0]
+@200
+-
 -AXI Data
 @28
 top.axils_timer.wvalid
@@ -35,32 +45,46 @@ top.axils_timer.wready
 @22
 #{top.axils_timer.wdata[31:0]} top.axils_timer.wdata[31] top.axils_timer.wdata[30] top.axils_timer.wdata[29] top.axils_timer.wdata[28] top.axils_timer.wdata[27] top.axils_timer.wdata[26] top.axils_timer.wdata[25] top.axils_timer.wdata[24] top.axils_timer.wdata[23] top.axils_timer.wdata[22] top.axils_timer.wdata[21] top.axils_timer.wdata[20] top.axils_timer.wdata[19] top.axils_timer.wdata[18] top.axils_timer.wdata[17] top.axils_timer.wdata[16] top.axils_timer.wdata[15] top.axils_timer.wdata[14] top.axils_timer.wdata[13] top.axils_timer.wdata[12] top.axils_timer.wdata[11] top.axils_timer.wdata[10] top.axils_timer.wdata[9] top.axils_timer.wdata[8] top.axils_timer.wdata[7] top.axils_timer.wdata[6] top.axils_timer.wdata[5] top.axils_timer.wdata[4] top.axils_timer.wdata[3] top.axils_timer.wdata[2] top.axils_timer.wdata[1] top.axils_timer.wdata[0]
 @200
+-
+@28
+top.axils_timer.tmr_i.rvalid
+top.axils_timer.tmr_i.rready
+@22
+#{top.axils_timer.tmr_i.rdata[31:0]} top.axils_timer.tmr_i.rdata[31] top.axils_timer.tmr_i.rdata[30] top.axils_timer.tmr_i.rdata[29] top.axils_timer.tmr_i.rdata[28] top.axils_timer.tmr_i.rdata[27] top.axils_timer.tmr_i.rdata[26] top.axils_timer.tmr_i.rdata[25] top.axils_timer.tmr_i.rdata[24] top.axils_timer.tmr_i.rdata[23] top.axils_timer.tmr_i.rdata[22] top.axils_timer.tmr_i.rdata[21] top.axils_timer.tmr_i.rdata[20] top.axils_timer.tmr_i.rdata[19] top.axils_timer.tmr_i.rdata[18] top.axils_timer.tmr_i.rdata[17] top.axils_timer.tmr_i.rdata[16] top.axils_timer.tmr_i.rdata[15] top.axils_timer.tmr_i.rdata[14] top.axils_timer.tmr_i.rdata[13] top.axils_timer.tmr_i.rdata[12] top.axils_timer.tmr_i.rdata[11] top.axils_timer.tmr_i.rdata[10] top.axils_timer.tmr_i.rdata[9] top.axils_timer.tmr_i.rdata[8] top.axils_timer.tmr_i.rdata[7] top.axils_timer.tmr_i.rdata[6] top.axils_timer.tmr_i.rdata[5] top.axils_timer.tmr_i.rdata[4] top.axils_timer.tmr_i.rdata[3] top.axils_timer.tmr_i.rdata[2] top.axils_timer.tmr_i.rdata[1] top.axils_timer.tmr_i.rdata[0]
+@200
+-
 -AXI Response
 @28
 top.axils_timer.bvalid
 top.axils_timer.bready
 #{top.axils_timer.bresp[1:0]} top.axils_timer.bresp[1] top.axils_timer.bresp[0]
+#{top.axils_timer.tmr_i.rresp[1:0]} top.axils_timer.tmr_i.rresp[1] top.axils_timer.tmr_i.rresp[0]
 @200
+-
 -AXI internals
 @28
-top.axils_timer.tmr.cur_stat
-top.axils_timer.tmr.nxt_stat
-top.axils_timer.tmr.wreg
-top.axils_timer.tmr.wstat
+top.axils_timer.tmr_i.wcur_stat_a
+top.axils_timer.tmr_i.rcur_stat_a
+@200
+-
+-Interface
+@28
+top.axils_timer.tmr_i.we
+top.axils_timer.tmr_i.wreg
+@22
+#{top.axils_timer.tmr_i.wval[31:0]} top.axils_timer.tmr_i.wval[31] top.axils_timer.tmr_i.wval[30] top.axils_timer.tmr_i.wval[29] top.axils_timer.tmr_i.wval[28] top.axils_timer.tmr_i.wval[27] top.axils_timer.tmr_i.wval[26] top.axils_timer.tmr_i.wval[25] top.axils_timer.tmr_i.wval[24] top.axils_timer.tmr_i.wval[23] top.axils_timer.tmr_i.wval[22] top.axils_timer.tmr_i.wval[21] top.axils_timer.tmr_i.wval[20] top.axils_timer.tmr_i.wval[19] top.axils_timer.tmr_i.wval[18] top.axils_timer.tmr_i.wval[17] top.axils_timer.tmr_i.wval[16] top.axils_timer.tmr_i.wval[15] top.axils_timer.tmr_i.wval[14] top.axils_timer.tmr_i.wval[13] top.axils_timer.tmr_i.wval[12] top.axils_timer.tmr_i.wval[11] top.axils_timer.tmr_i.wval[10] top.axils_timer.tmr_i.wval[9] top.axils_timer.tmr_i.wval[8] top.axils_timer.tmr_i.wval[7] top.axils_timer.tmr_i.wval[6] top.axils_timer.tmr_i.wval[5] top.axils_timer.tmr_i.wval[4] top.axils_timer.tmr_i.wval[3] top.axils_timer.tmr_i.wval[2] top.axils_timer.tmr_i.wval[1] top.axils_timer.tmr_i.wval[0]
+@200
+-
+@28
+top.axils_timer.tmr_i.rreg
+@22
+#{top.axils_timer.tmr_i.rval[31:0]} top.axils_timer.tmr_i.rval[31] top.axils_timer.tmr_i.rval[30] top.axils_timer.tmr_i.rval[29] top.axils_timer.tmr_i.rval[28] top.axils_timer.tmr_i.rval[27] top.axils_timer.tmr_i.rval[26] top.axils_timer.tmr_i.rval[25] top.axils_timer.tmr_i.rval[24] top.axils_timer.tmr_i.rval[23] top.axils_timer.tmr_i.rval[22] top.axils_timer.tmr_i.rval[21] top.axils_timer.tmr_i.rval[20] top.axils_timer.tmr_i.rval[19] top.axils_timer.tmr_i.rval[18] top.axils_timer.tmr_i.rval[17] top.axils_timer.tmr_i.rval[16] top.axils_timer.tmr_i.rval[15] top.axils_timer.tmr_i.rval[14] top.axils_timer.tmr_i.rval[13] top.axils_timer.tmr_i.rval[12] top.axils_timer.tmr_i.rval[11] top.axils_timer.tmr_i.rval[10] top.axils_timer.tmr_i.rval[9] top.axils_timer.tmr_i.rval[8] top.axils_timer.tmr_i.rval[7] top.axils_timer.tmr_i.rval[6] top.axils_timer.tmr_i.rval[5] top.axils_timer.tmr_i.rval[4] top.axils_timer.tmr_i.rval[3] top.axils_timer.tmr_i.rval[2] top.axils_timer.tmr_i.rval[1] top.axils_timer.tmr_i.rval[0]
 @200
 -
 -Timer internals
-@28
-top.axils_timer.wstat
-top.axils_timer.wreg
 @22
-#{top.axils_timer.wval[31:0]} top.axils_timer.wval[31] top.axils_timer.wval[30] top.axils_timer.wval[29] top.axils_timer.wval[28] top.axils_timer.wval[27] top.axils_timer.wval[26] top.axils_timer.wval[25] top.axils_timer.wval[24] top.axils_timer.wval[23] top.axils_timer.wval[22] top.axils_timer.wval[21] top.axils_timer.wval[20] top.axils_timer.wval[19] top.axils_timer.wval[18] top.axils_timer.wval[17] top.axils_timer.wval[16] top.axils_timer.wval[15] top.axils_timer.wval[14] top.axils_timer.wval[13] top.axils_timer.wval[12] top.axils_timer.wval[11] top.axils_timer.wval[10] top.axils_timer.wval[9] top.axils_timer.wval[8] top.axils_timer.wval[7] top.axils_timer.wval[6] top.axils_timer.wval[5] top.axils_timer.wval[4] top.axils_timer.wval[3] top.axils_timer.wval[2] top.axils_timer.wval[1] top.axils_timer.wval[0]
-@200
--
-@22
-#{top.axils_timer.oreg0[31:0]} top.axils_timer.oreg0[31] top.axils_timer.oreg0[30] top.axils_timer.oreg0[29] top.axils_timer.oreg0[28] top.axils_timer.oreg0[27] top.axils_timer.oreg0[26] top.axils_timer.oreg0[25] top.axils_timer.oreg0[24] top.axils_timer.oreg0[23] top.axils_timer.oreg0[22] top.axils_timer.oreg0[21] top.axils_timer.oreg0[20] top.axils_timer.oreg0[19] top.axils_timer.oreg0[18] top.axils_timer.oreg0[17] top.axils_timer.oreg0[16] top.axils_timer.oreg0[15] top.axils_timer.oreg0[14] top.axils_timer.oreg0[13] top.axils_timer.oreg0[12] top.axils_timer.oreg0[11] top.axils_timer.oreg0[10] top.axils_timer.oreg0[9] top.axils_timer.oreg0[8] top.axils_timer.oreg0[7] top.axils_timer.oreg0[6] top.axils_timer.oreg0[5] top.axils_timer.oreg0[4] top.axils_timer.oreg0[3] top.axils_timer.oreg0[2] top.axils_timer.oreg0[1] top.axils_timer.oreg0[0]
-#{top.axils_timer.oreg1[31:0]} top.axils_timer.oreg1[31] top.axils_timer.oreg1[30] top.axils_timer.oreg1[29] top.axils_timer.oreg1[28] top.axils_timer.oreg1[27] top.axils_timer.oreg1[26] top.axils_timer.oreg1[25] top.axils_timer.oreg1[24] top.axils_timer.oreg1[23] top.axils_timer.oreg1[22] top.axils_timer.oreg1[21] top.axils_timer.oreg1[20] top.axils_timer.oreg1[19] top.axils_timer.oreg1[18] top.axils_timer.oreg1[17] top.axils_timer.oreg1[16] top.axils_timer.oreg1[15] top.axils_timer.oreg1[14] top.axils_timer.oreg1[13] top.axils_timer.oreg1[12] top.axils_timer.oreg1[11] top.axils_timer.oreg1[10] top.axils_timer.oreg1[9] top.axils_timer.oreg1[8] top.axils_timer.oreg1[7] top.axils_timer.oreg1[6] top.axils_timer.oreg1[5] top.axils_timer.oreg1[4] top.axils_timer.oreg1[3] top.axils_timer.oreg1[2] top.axils_timer.oreg1[1] top.axils_timer.oreg1[0]
-@23
-#{top.axils_timer.oreg2[31:0]} top.axils_timer.oreg2[31] top.axils_timer.oreg2[30] top.axils_timer.oreg2[29] top.axils_timer.oreg2[28] top.axils_timer.oreg2[27] top.axils_timer.oreg2[26] top.axils_timer.oreg2[25] top.axils_timer.oreg2[24] top.axils_timer.oreg2[23] top.axils_timer.oreg2[22] top.axils_timer.oreg2[21] top.axils_timer.oreg2[20] top.axils_timer.oreg2[19] top.axils_timer.oreg2[18] top.axils_timer.oreg2[17] top.axils_timer.oreg2[16] top.axils_timer.oreg2[15] top.axils_timer.oreg2[14] top.axils_timer.oreg2[13] top.axils_timer.oreg2[12] top.axils_timer.oreg2[11] top.axils_timer.oreg2[10] top.axils_timer.oreg2[9] top.axils_timer.oreg2[8] top.axils_timer.oreg2[7] top.axils_timer.oreg2[6] top.axils_timer.oreg2[5] top.axils_timer.oreg2[4] top.axils_timer.oreg2[3] top.axils_timer.oreg2[2] top.axils_timer.oreg2[1] top.axils_timer.oreg2[0]
+#{top.axils_timer.stor0_a[31:0]} top.axils_timer.stor0_a[31] top.axils_timer.stor0_a[30] top.axils_timer.stor0_a[29] top.axils_timer.stor0_a[28] top.axils_timer.stor0_a[27] top.axils_timer.stor0_a[26] top.axils_timer.stor0_a[25] top.axils_timer.stor0_a[24] top.axils_timer.stor0_a[23] top.axils_timer.stor0_a[22] top.axils_timer.stor0_a[21] top.axils_timer.stor0_a[20] top.axils_timer.stor0_a[19] top.axils_timer.stor0_a[18] top.axils_timer.stor0_a[17] top.axils_timer.stor0_a[16] top.axils_timer.stor0_a[15] top.axils_timer.stor0_a[14] top.axils_timer.stor0_a[13] top.axils_timer.stor0_a[12] top.axils_timer.stor0_a[11] top.axils_timer.stor0_a[10] top.axils_timer.stor0_a[9] top.axils_timer.stor0_a[8] top.axils_timer.stor0_a[7] top.axils_timer.stor0_a[6] top.axils_timer.stor0_a[5] top.axils_timer.stor0_a[4] top.axils_timer.stor0_a[3] top.axils_timer.stor0_a[2] top.axils_timer.stor0_a[1] top.axils_timer.stor0_a[0]
+#{top.axils_timer.stor1_a[31:0]} top.axils_timer.stor1_a[31] top.axils_timer.stor1_a[30] top.axils_timer.stor1_a[29] top.axils_timer.stor1_a[28] top.axils_timer.stor1_a[27] top.axils_timer.stor1_a[26] top.axils_timer.stor1_a[25] top.axils_timer.stor1_a[24] top.axils_timer.stor1_a[23] top.axils_timer.stor1_a[22] top.axils_timer.stor1_a[21] top.axils_timer.stor1_a[20] top.axils_timer.stor1_a[19] top.axils_timer.stor1_a[18] top.axils_timer.stor1_a[17] top.axils_timer.stor1_a[16] top.axils_timer.stor1_a[15] top.axils_timer.stor1_a[14] top.axils_timer.stor1_a[13] top.axils_timer.stor1_a[12] top.axils_timer.stor1_a[11] top.axils_timer.stor1_a[10] top.axils_timer.stor1_a[9] top.axils_timer.stor1_a[8] top.axils_timer.stor1_a[7] top.axils_timer.stor1_a[6] top.axils_timer.stor1_a[5] top.axils_timer.stor1_a[4] top.axils_timer.stor1_a[3] top.axils_timer.stor1_a[2] top.axils_timer.stor1_a[1] top.axils_timer.stor1_a[0]
+#{top.axils_timer.stor2_a[31:0]} top.axils_timer.stor2_a[31] top.axils_timer.stor2_a[30] top.axils_timer.stor2_a[29] top.axils_timer.stor2_a[28] top.axils_timer.stor2_a[27] top.axils_timer.stor2_a[26] top.axils_timer.stor2_a[25] top.axils_timer.stor2_a[24] top.axils_timer.stor2_a[23] top.axils_timer.stor2_a[22] top.axils_timer.stor2_a[21] top.axils_timer.stor2_a[20] top.axils_timer.stor2_a[19] top.axils_timer.stor2_a[18] top.axils_timer.stor2_a[17] top.axils_timer.stor2_a[16] top.axils_timer.stor2_a[15] top.axils_timer.stor2_a[14] top.axils_timer.stor2_a[13] top.axils_timer.stor2_a[12] top.axils_timer.stor2_a[11] top.axils_timer.stor2_a[10] top.axils_timer.stor2_a[9] top.axils_timer.stor2_a[8] top.axils_timer.stor2_a[7] top.axils_timer.stor2_a[6] top.axils_timer.stor2_a[5] top.axils_timer.stor2_a[4] top.axils_timer.stor2_a[3] top.axils_timer.stor2_a[2] top.axils_timer.stor2_a[1] top.axils_timer.stor2_a[0]
 [pattern_trace] 1
 [pattern_trace] 0

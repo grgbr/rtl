@@ -4,7 +4,6 @@ use ieee.std_logic_1164.all;
 package axi is
 	type axi_regs  is array(natural range <>) of
 	                  std_logic_vector(31 downto 0);
-	type axi_state is (AXI_STAT_RST, AXI_STAT_IDLE, AXI_STAT_WR);
 
 	constant AXI_RESP_OKAY  : std_logic_vector(1 downto 0) := "00";
 	constant AXI_RESP_EXOKAY: std_logic_vector(1 downto 0) := "01";
@@ -35,8 +34,10 @@ package axi is
 		     rdata   : out std_logic_vector(31 downto 0);
 		     rresp   : out std_logic_vector(1 downto 0);
 
-		     wstat   : out axi_state;
+		     we      : out std_logic;
 		     wreg    : out natural range 0 to REG_NR - 1;
-		     wval    : out std_logic_vector(31 downto 0));
+		     wval    : out std_logic_vector(31 downto 0);
+		     rreg    : out natural range 0 to REG_NR - 1;
+		     rval    : in  std_logic_vector(31 downto 0));
 	end component axil_slave;
 end package axi;
