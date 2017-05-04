@@ -51,6 +51,7 @@ define _runcosim
 	    MODULE="$(subst .ghw,,$(subst $(BUILD)/,,$(1)))" \
 	    TESTCASE= \
 	    COCOTB_REDUCED_LOG_FMT=1 \
+	    COCOTB_LOG_LEVEL=$(COCOTB_LOG) \
 	    $(VSIM) -c +nowarn3116 -onfinish exit -foreign "cocotb_init libfli.so" \
 	    $(2).$(subst _cosim.ghw,,$(subst $(BUILD)/,,$(1))) -do ../modelsim.do
 endef

@@ -1,0 +1,87 @@
+[*]
+[*] GTKWave Analyzer v3.3.62 (w)1999-2014 BSI
+[*] Sun May 14 17:40:42 2017
+[*]
+[dumpfile] "/users/greg/dev/rtl/build/tmr_axi4ls_cosim.ghw"
+[dumpfile_mtime] "Sun May 14 17:25:47 2017"
+[dumpfile_size] 3780
+[savefile] "/users/greg/dev/rtl/test/tmr_axi4ls_cosim.gtkw"
+[timestart] 0
+[size] 1920 1161
+[pos] -1 -1
+*-22.140797 10000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tmr_axi4ls.
+[treeopen] top.tmr_axi4ls.tmr_a.
+[sst_width] 225
+[signals_width] 264
+[sst_expanded] 1
+[sst_vpaned_height] 423
+@28
+top.tmr_axi4ls.areset_n
+top.tmr_axi4ls.aclk
+@200
+-
+-AXI write
+-address
+@28
+top.tmr_axi4ls.awvalid
+top.tmr_axi4ls.awready
+@23
+#{top.tmr_axi4ls.awaddr[31:0]} top.tmr_axi4ls.awaddr[31] top.tmr_axi4ls.awaddr[30] top.tmr_axi4ls.awaddr[29] top.tmr_axi4ls.awaddr[28] top.tmr_axi4ls.awaddr[27] top.tmr_axi4ls.awaddr[26] top.tmr_axi4ls.awaddr[25] top.tmr_axi4ls.awaddr[24] top.tmr_axi4ls.awaddr[23] top.tmr_axi4ls.awaddr[22] top.tmr_axi4ls.awaddr[21] top.tmr_axi4ls.awaddr[20] top.tmr_axi4ls.awaddr[19] top.tmr_axi4ls.awaddr[18] top.tmr_axi4ls.awaddr[17] top.tmr_axi4ls.awaddr[16] top.tmr_axi4ls.awaddr[15] top.tmr_axi4ls.awaddr[14] top.tmr_axi4ls.awaddr[13] top.tmr_axi4ls.awaddr[12] top.tmr_axi4ls.awaddr[11] top.tmr_axi4ls.awaddr[10] top.tmr_axi4ls.awaddr[9] top.tmr_axi4ls.awaddr[8] top.tmr_axi4ls.awaddr[7] top.tmr_axi4ls.awaddr[6] top.tmr_axi4ls.awaddr[5] top.tmr_axi4ls.awaddr[4] top.tmr_axi4ls.awaddr[3] top.tmr_axi4ls.awaddr[2] top.tmr_axi4ls.awaddr[1] top.tmr_axi4ls.awaddr[0]
+@200
+-data
+@28
+top.tmr_axi4ls.wvalid
+top.tmr_axi4ls.wready
+@22
+#{top.tmr_axi4ls.wdata[31:0]} top.tmr_axi4ls.wdata[31] top.tmr_axi4ls.wdata[30] top.tmr_axi4ls.wdata[29] top.tmr_axi4ls.wdata[28] top.tmr_axi4ls.wdata[27] top.tmr_axi4ls.wdata[26] top.tmr_axi4ls.wdata[25] top.tmr_axi4ls.wdata[24] top.tmr_axi4ls.wdata[23] top.tmr_axi4ls.wdata[22] top.tmr_axi4ls.wdata[21] top.tmr_axi4ls.wdata[20] top.tmr_axi4ls.wdata[19] top.tmr_axi4ls.wdata[18] top.tmr_axi4ls.wdata[17] top.tmr_axi4ls.wdata[16] top.tmr_axi4ls.wdata[15] top.tmr_axi4ls.wdata[14] top.tmr_axi4ls.wdata[13] top.tmr_axi4ls.wdata[12] top.tmr_axi4ls.wdata[11] top.tmr_axi4ls.wdata[10] top.tmr_axi4ls.wdata[9] top.tmr_axi4ls.wdata[8] top.tmr_axi4ls.wdata[7] top.tmr_axi4ls.wdata[6] top.tmr_axi4ls.wdata[5] top.tmr_axi4ls.wdata[4] top.tmr_axi4ls.wdata[3] top.tmr_axi4ls.wdata[2] top.tmr_axi4ls.wdata[1] top.tmr_axi4ls.wdata[0]
+@200
+-response
+@28
+top.tmr_axi4ls.bvalid
+top.tmr_axi4ls.bready
+#{top.tmr_axi4ls.bresp[1:0]} top.tmr_axi4ls.bresp[1] top.tmr_axi4ls.bresp[0]
+@200
+-
+-AXI internal
+-
+-Timer
+@28
+top.tmr_axi4ls.tmr_a.we
+top.tmr_axi4ls.tmr_a.wreg
+@22
+#{top.tmr_axi4ls.tmr_a.wdat[31:0]} top.tmr_axi4ls.tmr_a.wdat[31] top.tmr_axi4ls.tmr_a.wdat[30] top.tmr_axi4ls.tmr_a.wdat[29] top.tmr_axi4ls.tmr_a.wdat[28] top.tmr_axi4ls.tmr_a.wdat[27] top.tmr_axi4ls.tmr_a.wdat[26] top.tmr_axi4ls.tmr_a.wdat[25] top.tmr_axi4ls.tmr_a.wdat[24] top.tmr_axi4ls.tmr_a.wdat[23] top.tmr_axi4ls.tmr_a.wdat[22] top.tmr_axi4ls.tmr_a.wdat[21] top.tmr_axi4ls.tmr_a.wdat[20] top.tmr_axi4ls.tmr_a.wdat[19] top.tmr_axi4ls.tmr_a.wdat[18] top.tmr_axi4ls.tmr_a.wdat[17] top.tmr_axi4ls.tmr_a.wdat[16] top.tmr_axi4ls.tmr_a.wdat[15] top.tmr_axi4ls.tmr_a.wdat[14] top.tmr_axi4ls.tmr_a.wdat[13] top.tmr_axi4ls.tmr_a.wdat[12] top.tmr_axi4ls.tmr_a.wdat[11] top.tmr_axi4ls.tmr_a.wdat[10] top.tmr_axi4ls.tmr_a.wdat[9] top.tmr_axi4ls.tmr_a.wdat[8] top.tmr_axi4ls.tmr_a.wdat[7] top.tmr_axi4ls.tmr_a.wdat[6] top.tmr_axi4ls.tmr_a.wdat[5] top.tmr_axi4ls.tmr_a.wdat[4] top.tmr_axi4ls.tmr_a.wdat[3] top.tmr_axi4ls.tmr_a.wdat[2] top.tmr_axi4ls.tmr_a.wdat[1] top.tmr_axi4ls.tmr_a.wdat[0]
+@200
+-
+@28
+top.tmr_axi4ls.tmr_a.oe
+top.tmr_axi4ls.tmr_a.oreg
+@22
+#{top.tmr_axi4ls.tmr_a.odat[31:0]} top.tmr_axi4ls.tmr_a.odat[31] top.tmr_axi4ls.tmr_a.odat[30] top.tmr_axi4ls.tmr_a.odat[29] top.tmr_axi4ls.tmr_a.odat[28] top.tmr_axi4ls.tmr_a.odat[27] top.tmr_axi4ls.tmr_a.odat[26] top.tmr_axi4ls.tmr_a.odat[25] top.tmr_axi4ls.tmr_a.odat[24] top.tmr_axi4ls.tmr_a.odat[23] top.tmr_axi4ls.tmr_a.odat[22] top.tmr_axi4ls.tmr_a.odat[21] top.tmr_axi4ls.tmr_a.odat[20] top.tmr_axi4ls.tmr_a.odat[19] top.tmr_axi4ls.tmr_a.odat[18] top.tmr_axi4ls.tmr_a.odat[17] top.tmr_axi4ls.tmr_a.odat[16] top.tmr_axi4ls.tmr_a.odat[15] top.tmr_axi4ls.tmr_a.odat[14] top.tmr_axi4ls.tmr_a.odat[13] top.tmr_axi4ls.tmr_a.odat[12] top.tmr_axi4ls.tmr_a.odat[11] top.tmr_axi4ls.tmr_a.odat[10] top.tmr_axi4ls.tmr_a.odat[9] top.tmr_axi4ls.tmr_a.odat[8] top.tmr_axi4ls.tmr_a.odat[7] top.tmr_axi4ls.tmr_a.odat[6] top.tmr_axi4ls.tmr_a.odat[5] top.tmr_axi4ls.tmr_a.odat[4] top.tmr_axi4ls.tmr_a.odat[3] top.tmr_axi4ls.tmr_a.odat[2] top.tmr_axi4ls.tmr_a.odat[1] top.tmr_axi4ls.tmr_a.odat[0]
+@200
+-
+@28
+top.tmr_axi4ls.tmr_a.int
+@200
+-
+-AXI read
+-address
+@28
+top.tmr_axi4ls.arvalid
+top.tmr_axi4ls.arready
+@22
+#{top.tmr_axi4ls.araddr[31:0]} top.tmr_axi4ls.araddr[31] top.tmr_axi4ls.araddr[30] top.tmr_axi4ls.araddr[29] top.tmr_axi4ls.araddr[28] top.tmr_axi4ls.araddr[27] top.tmr_axi4ls.araddr[26] top.tmr_axi4ls.araddr[25] top.tmr_axi4ls.araddr[24] top.tmr_axi4ls.araddr[23] top.tmr_axi4ls.araddr[22] top.tmr_axi4ls.araddr[21] top.tmr_axi4ls.araddr[20] top.tmr_axi4ls.araddr[19] top.tmr_axi4ls.araddr[18] top.tmr_axi4ls.araddr[17] top.tmr_axi4ls.araddr[16] top.tmr_axi4ls.araddr[15] top.tmr_axi4ls.araddr[14] top.tmr_axi4ls.araddr[13] top.tmr_axi4ls.araddr[12] top.tmr_axi4ls.araddr[11] top.tmr_axi4ls.araddr[10] top.tmr_axi4ls.araddr[9] top.tmr_axi4ls.araddr[8] top.tmr_axi4ls.araddr[7] top.tmr_axi4ls.araddr[6] top.tmr_axi4ls.araddr[5] top.tmr_axi4ls.araddr[4] top.tmr_axi4ls.araddr[3] top.tmr_axi4ls.araddr[2] top.tmr_axi4ls.araddr[1] top.tmr_axi4ls.araddr[0]
+@200
+-data
+@28
+top.tmr_axi4ls.rvalid
+top.tmr_axi4ls.rready
+@22
+#{top.tmr_axi4ls.rdata[31:0]} top.tmr_axi4ls.rdata[31] top.tmr_axi4ls.rdata[30] top.tmr_axi4ls.rdata[29] top.tmr_axi4ls.rdata[28] top.tmr_axi4ls.rdata[27] top.tmr_axi4ls.rdata[26] top.tmr_axi4ls.rdata[25] top.tmr_axi4ls.rdata[24] top.tmr_axi4ls.rdata[23] top.tmr_axi4ls.rdata[22] top.tmr_axi4ls.rdata[21] top.tmr_axi4ls.rdata[20] top.tmr_axi4ls.rdata[19] top.tmr_axi4ls.rdata[18] top.tmr_axi4ls.rdata[17] top.tmr_axi4ls.rdata[16] top.tmr_axi4ls.rdata[15] top.tmr_axi4ls.rdata[14] top.tmr_axi4ls.rdata[13] top.tmr_axi4ls.rdata[12] top.tmr_axi4ls.rdata[11] top.tmr_axi4ls.rdata[10] top.tmr_axi4ls.rdata[9] top.tmr_axi4ls.rdata[8] top.tmr_axi4ls.rdata[7] top.tmr_axi4ls.rdata[6] top.tmr_axi4ls.rdata[5] top.tmr_axi4ls.rdata[4] top.tmr_axi4ls.rdata[3] top.tmr_axi4ls.rdata[2] top.tmr_axi4ls.rdata[1] top.tmr_axi4ls.rdata[0]
+@200
+-response
+@28
+#{top.tmr_axi4ls.rresp[1:0]} top.tmr_axi4ls.rresp[1] top.tmr_axi4ls.rresp[0]
+[pattern_trace] 1
+[pattern_trace] 0

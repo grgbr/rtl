@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Tue May 16 10:24:06 2017
+[*]
+[dumpfile] "/home/greg/dev/rtl/build/tmr_impl_cosim.ghw"
+[dumpfile_mtime] "Tue May 16 10:23:53 2017"
+[dumpfile_size] 1245
+[savefile] "/home/greg/dev/rtl/test/tmr_impl_cosim.gtkw"
+[timestart] 0
+[size] 1855 1056
+[pos] -1 -1
+*-22.620102 28001000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tmr_impl.
+[sst_width] 225
+[signals_width] 351
+[sst_expanded] 1
+[sst_vpaned_height] 320
+@28
+top.tmr_impl.clk
+@200
+-
+@28
+top.tmr_impl.ld_cnt
+top.tmr_impl.cnt_ld
+@22
+#{top.tmr_impl.cnt[31:0]} top.tmr_impl.cnt[31] top.tmr_impl.cnt[30] top.tmr_impl.cnt[29] top.tmr_impl.cnt[28] top.tmr_impl.cnt[27] top.tmr_impl.cnt[26] top.tmr_impl.cnt[25] top.tmr_impl.cnt[24] top.tmr_impl.cnt[23] top.tmr_impl.cnt[22] top.tmr_impl.cnt[21] top.tmr_impl.cnt[20] top.tmr_impl.cnt[19] top.tmr_impl.cnt[18] top.tmr_impl.cnt[17] top.tmr_impl.cnt[16] top.tmr_impl.cnt[15] top.tmr_impl.cnt[14] top.tmr_impl.cnt[13] top.tmr_impl.cnt[12] top.tmr_impl.cnt[11] top.tmr_impl.cnt[10] top.tmr_impl.cnt[9] top.tmr_impl.cnt[8] top.tmr_impl.cnt[7] top.tmr_impl.cnt[6] top.tmr_impl.cnt[5] top.tmr_impl.cnt[4] top.tmr_impl.cnt[3] top.tmr_impl.cnt[2] top.tmr_impl.cnt[1] top.tmr_impl.cnt[0]
+#{top.tmr_impl.cntdwn[31:0]} top.tmr_impl.cntdwn[31] top.tmr_impl.cntdwn[30] top.tmr_impl.cntdwn[29] top.tmr_impl.cntdwn[28] top.tmr_impl.cntdwn[27] top.tmr_impl.cntdwn[26] top.tmr_impl.cntdwn[25] top.tmr_impl.cntdwn[24] top.tmr_impl.cntdwn[23] top.tmr_impl.cntdwn[22] top.tmr_impl.cntdwn[21] top.tmr_impl.cntdwn[20] top.tmr_impl.cntdwn[19] top.tmr_impl.cntdwn[18] top.tmr_impl.cntdwn[17] top.tmr_impl.cntdwn[16] top.tmr_impl.cntdwn[15] top.tmr_impl.cntdwn[14] top.tmr_impl.cntdwn[13] top.tmr_impl.cntdwn[12] top.tmr_impl.cntdwn[11] top.tmr_impl.cntdwn[10] top.tmr_impl.cntdwn[9] top.tmr_impl.cntdwn[8] top.tmr_impl.cntdwn[7] top.tmr_impl.cntdwn[6] top.tmr_impl.cntdwn[5] top.tmr_impl.cntdwn[4] top.tmr_impl.cntdwn[3] top.tmr_impl.cntdwn[2] top.tmr_impl.cntdwn[1] top.tmr_impl.cntdwn[0]
+@200
+-
+@28
+top.tmr_impl.set_laps
+top.tmr_impl.laps_set
+@22
+#{top.tmr_impl.laps[29:0]} top.tmr_impl.laps[29] top.tmr_impl.laps[28] top.tmr_impl.laps[27] top.tmr_impl.laps[26] top.tmr_impl.laps[25] top.tmr_impl.laps[24] top.tmr_impl.laps[23] top.tmr_impl.laps[22] top.tmr_impl.laps[21] top.tmr_impl.laps[20] top.tmr_impl.laps[19] top.tmr_impl.laps[18] top.tmr_impl.laps[17] top.tmr_impl.laps[16] top.tmr_impl.laps[15] top.tmr_impl.laps[14] top.tmr_impl.laps[13] top.tmr_impl.laps[12] top.tmr_impl.laps[11] top.tmr_impl.laps[10] top.tmr_impl.laps[9] top.tmr_impl.laps[8] top.tmr_impl.laps[7] top.tmr_impl.laps[6] top.tmr_impl.laps[5] top.tmr_impl.laps[4] top.tmr_impl.laps[3] top.tmr_impl.laps[2] top.tmr_impl.laps[1] top.tmr_impl.laps[0]
+@200
+-
+@28
+top.tmr_impl.clr_alrm
+@29
+top.tmr_impl.alrm_set
+[pattern_trace] 1
+[pattern_trace] 0

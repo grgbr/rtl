@@ -17,7 +17,8 @@ define _runcosim
 	env PYTHONPATH="$(TEST):$(cocotb_libdir):$(COCOTB)" \
 	    LD_LIBRARY_PATH="$(cocotb_libdir)" \
 	    MODULE=$(subst .ghw,,$(subst $(BUILD)/,,$(1))) \
-	    COCOTB_REDUCED_LOG_FMT=1 \
+	    COCOTB_REDUCED_LOG_FMT=0 \
+	    COCOTB_LOG_LEVEL=$(COCOTB_LOG) \
 	    TESTCASE= \
 	    TOPLEVEL=$(subst _cosim.ghw,,$(subst $(BUILD)/,,$(1))) \
 	    TOPLEVEL_LANG=vhdl \

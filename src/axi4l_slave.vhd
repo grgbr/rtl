@@ -64,6 +64,7 @@ entity axi4l_slave is
 	     we      : out std_logic;
 	     wreg    : out natural range 0 to REG_NR - 1;
 	     wval    : out std_logic_vector(31 downto 0);
+	     re      : out std_logic;
 	     rreg    : out natural range 0 to REG_NR - 1;
 	     rval    : in  std_logic_vector(31 downto 0));
 end entity axi4l_slave;
@@ -206,6 +207,8 @@ begin
 				rsteady_a  <= '0';
 			end if;
 
+			re <= '0';
+
 		-- completing ongoing transaction, i.e. feeding master back
 		-- with response code and data
 		when STAT_RESP =>
@@ -213,9 +216,11 @@ begin
 
 			if (rready = '1') then
 				nxt_stat_p := STAT_REQ;
-				rsteady_a <= '0';
+				rsteady_a  <= '0';
+				re         <= '1';
 			else
-				rsteady_a <= '1';
+				rsteady_a  <= '1';
+				re         <= '0';
 			end if;
 
 		-- default / unknown / reset state handling
@@ -223,6 +228,7 @@ begin
 			arsteady_p := '0';
 			nxt_stat_p := STAT_REQ;
 			rsteady_a  <= '0';
+			re         <= '0';
 		end case;
 
 		arsteady_a  <= arsteady_p;

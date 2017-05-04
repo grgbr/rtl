@@ -20,10 +20,12 @@ class Axi4lSlaveBusMonitor(BusMonitor):
 	
 	def __init__(self, entity, scoreboard):
 		# declare signals to be monitored
-		self._signals = [ "awready", "awvalid", "awaddr", "wready",
-		                  "wvalid", "wdata", "bvalid", "bresp",
-		                  "arready", "rvalid", "rdata", "rresp",
-		                  "stor0_a", "stor1_a", "stor2_a" ]
+		self._signals = ["awvalid", "awaddr", "awready",
+		                 "wvalid" , "wready", "wdata",   "wstrb",
+		                 "bvalid",  "bready", "bresp",
+		                 "arvalid", "araddr", "arready",
+		                 "rvalid",  "rready", "rresp",   "rdata",
+		                 "stor0_a", "stor1_a", "stor2_a" ]
 		BusMonitor.__init__(self, entity, "",
 		                    entity.aclk, reset_n=entity.areset_n)
 
@@ -167,6 +169,10 @@ class Axi4lSlaveTB:
 		self._entity.awvalid  = 0
 		self._entity.wvalid   = 0
 		self._entity.areset_n = 0
+                
+                # This is optional: just to ease waveform analysis.
+		self._entity.rready   = 0
+		self._entity.bready   = 0
 
 		yield Timer(hold_delay)
 
@@ -181,7 +187,6 @@ class Axi4lSlaveTB:
 		        "areset_n": BinaryValue(0),
 		        # check slave properly drives its outputs
 		        "bvalid"  : BinaryValue(0),
-		        "bready"  : BinaryValue(0),
 		        "rvalid"  : BinaryValue(0)
 		}
 		yield self.expect(exp)
@@ -430,7 +435,7 @@ class Axi4lSlaveTB:
 		        "arready" : BinaryValue(1),
 		        "araddr"  : addr,
 		        "rvalid"  : BinaryValue(0),
-		        "rready"  : BinaryValue(1),
+		        "rready"  : BinaryValue(0),
 		        "rresp"   : BinaryValue(resp, bits=2)
 		}
 		if resp == 0:

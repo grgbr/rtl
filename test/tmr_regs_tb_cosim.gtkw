@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri May 19 09:37:23 2017
+[*]
+[dumpfile] "/home/greg/dev/rtl/build/tmr_regs_tb_cosim.ghw"
+[dumpfile_mtime] "Fri May 19 09:34:39 2017"
+[dumpfile_size] 11272
+[savefile] "/home/greg/dev/rtl/test/tmr_regs_tb_cosim.gtkw"
+[timestart] 0
+[size] 1855 1056
+[pos] -1 -1
+*-22.166567 10000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tmr_regs_tb.
+[treeopen] top.tmr_regs_tb.regs.
+[treeopen] top.tmr_regs_tb.regs.tmr.
+[sst_width] 225
+[signals_width] 237
+[sst_expanded] 1
+[sst_vpaned_height] 310
+@28
+top.tmr_regs_tb.rst_n
+top.tmr_regs_tb.clk
+@200
+-
+-Register write
+@28
+top.tmr_regs_tb.we
+#{top.tmr_regs_tb.wreg[1:0]} top.tmr_regs_tb.wreg[1] top.tmr_regs_tb.wreg[0]
+@22
+#{top.tmr_regs_tb.wdat[31:0]} top.tmr_regs_tb.wdat[31] top.tmr_regs_tb.wdat[30] top.tmr_regs_tb.wdat[29] top.tmr_regs_tb.wdat[28] top.tmr_regs_tb.wdat[27] top.tmr_regs_tb.wdat[26] top.tmr_regs_tb.wdat[25] top.tmr_regs_tb.wdat[24] top.tmr_regs_tb.wdat[23] top.tmr_regs_tb.wdat[22] top.tmr_regs_tb.wdat[21] top.tmr_regs_tb.wdat[20] top.tmr_regs_tb.wdat[19] top.tmr_regs_tb.wdat[18] top.tmr_regs_tb.wdat[17] top.tmr_regs_tb.wdat[16] top.tmr_regs_tb.wdat[15] top.tmr_regs_tb.wdat[14] top.tmr_regs_tb.wdat[13] top.tmr_regs_tb.wdat[12] top.tmr_regs_tb.wdat[11] top.tmr_regs_tb.wdat[10] top.tmr_regs_tb.wdat[9] top.tmr_regs_tb.wdat[8] top.tmr_regs_tb.wdat[7] top.tmr_regs_tb.wdat[6] top.tmr_regs_tb.wdat[5] top.tmr_regs_tb.wdat[4] top.tmr_regs_tb.wdat[3] top.tmr_regs_tb.wdat[2] top.tmr_regs_tb.wdat[1] top.tmr_regs_tb.wdat[0]
+@200
+-
+-Timer
+@28
+top.tmr_regs_tb.regs.tmr.clk
+@200
+-
+@28
+top.tmr_regs_tb.regs.tmr.ld_cnt
+top.tmr_regs_tb.regs.tmr.cnt_ld
+@22
+#{top.tmr_regs_tb.regs.tmr.cnt[31:0]} top.tmr_regs_tb.regs.tmr.cnt[31] top.tmr_regs_tb.regs.tmr.cnt[30] top.tmr_regs_tb.regs.tmr.cnt[29] top.tmr_regs_tb.regs.tmr.cnt[28] top.tmr_regs_tb.regs.tmr.cnt[27] top.tmr_regs_tb.regs.tmr.cnt[26] top.tmr_regs_tb.regs.tmr.cnt[25] top.tmr_regs_tb.regs.tmr.cnt[24] top.tmr_regs_tb.regs.tmr.cnt[23] top.tmr_regs_tb.regs.tmr.cnt[22] top.tmr_regs_tb.regs.tmr.cnt[21] top.tmr_regs_tb.regs.tmr.cnt[20] top.tmr_regs_tb.regs.tmr.cnt[19] top.tmr_regs_tb.regs.tmr.cnt[18] top.tmr_regs_tb.regs.tmr.cnt[17] top.tmr_regs_tb.regs.tmr.cnt[16] top.tmr_regs_tb.regs.tmr.cnt[15] top.tmr_regs_tb.regs.tmr.cnt[14] top.tmr_regs_tb.regs.tmr.cnt[13] top.tmr_regs_tb.regs.tmr.cnt[12] top.tmr_regs_tb.regs.tmr.cnt[11] top.tmr_regs_tb.regs.tmr.cnt[10] top.tmr_regs_tb.regs.tmr.cnt[9] top.tmr_regs_tb.regs.tmr.cnt[8] top.tmr_regs_tb.regs.tmr.cnt[7] top.tmr_regs_tb.regs.tmr.cnt[6] top.tmr_regs_tb.regs.tmr.cnt[5] top.tmr_regs_tb.regs.tmr.cnt[4] top.tmr_regs_tb.regs.tmr.cnt[3] top.tmr_regs_tb.regs.tmr.cnt[2] top.tmr_regs_tb.regs.tmr.cnt[1] top.tmr_regs_tb.regs.tmr.cnt[0]
+@200
+-
+@28
+top.tmr_regs_tb.regs.tmr.set_laps
+top.tmr_regs_tb.regs.tmr.laps_set
+@22
+#{top.tmr_regs_tb.regs.tmr.laps[29:0]} top.tmr_regs_tb.regs.tmr.laps[29] top.tmr_regs_tb.regs.tmr.laps[28] top.tmr_regs_tb.regs.tmr.laps[27] top.tmr_regs_tb.regs.tmr.laps[26] top.tmr_regs_tb.regs.tmr.laps[25] top.tmr_regs_tb.regs.tmr.laps[24] top.tmr_regs_tb.regs.tmr.laps[23] top.tmr_regs_tb.regs.tmr.laps[22] top.tmr_regs_tb.regs.tmr.laps[21] top.tmr_regs_tb.regs.tmr.laps[20] top.tmr_regs_tb.regs.tmr.laps[19] top.tmr_regs_tb.regs.tmr.laps[18] top.tmr_regs_tb.regs.tmr.laps[17] top.tmr_regs_tb.regs.tmr.laps[16] top.tmr_regs_tb.regs.tmr.laps[15] top.tmr_regs_tb.regs.tmr.laps[14] top.tmr_regs_tb.regs.tmr.laps[13] top.tmr_regs_tb.regs.tmr.laps[12] top.tmr_regs_tb.regs.tmr.laps[11] top.tmr_regs_tb.regs.tmr.laps[10] top.tmr_regs_tb.regs.tmr.laps[9] top.tmr_regs_tb.regs.tmr.laps[8] top.tmr_regs_tb.regs.tmr.laps[7] top.tmr_regs_tb.regs.tmr.laps[6] top.tmr_regs_tb.regs.tmr.laps[5] top.tmr_regs_tb.regs.tmr.laps[4] top.tmr_regs_tb.regs.tmr.laps[3] top.tmr_regs_tb.regs.tmr.laps[2] top.tmr_regs_tb.regs.tmr.laps[1] top.tmr_regs_tb.regs.tmr.laps[0]
+@200
+-
+@28
+top.tmr_regs_tb.regs.tmr.clr_alrm
+top.tmr_regs_tb.regs.tmr.alrm_set
+@200
+-
+@22
+#{top.tmr_regs_tb.regs.tmr.cntdwn[31:0]} top.tmr_regs_tb.regs.tmr.cntdwn[31] top.tmr_regs_tb.regs.tmr.cntdwn[30] top.tmr_regs_tb.regs.tmr.cntdwn[29] top.tmr_regs_tb.regs.tmr.cntdwn[28] top.tmr_regs_tb.regs.tmr.cntdwn[27] top.tmr_regs_tb.regs.tmr.cntdwn[26] top.tmr_regs_tb.regs.tmr.cntdwn[25] top.tmr_regs_tb.regs.tmr.cntdwn[24] top.tmr_regs_tb.regs.tmr.cntdwn[23] top.tmr_regs_tb.regs.tmr.cntdwn[22] top.tmr_regs_tb.regs.tmr.cntdwn[21] top.tmr_regs_tb.regs.tmr.cntdwn[20] top.tmr_regs_tb.regs.tmr.cntdwn[19] top.tmr_regs_tb.regs.tmr.cntdwn[18] top.tmr_regs_tb.regs.tmr.cntdwn[17] top.tmr_regs_tb.regs.tmr.cntdwn[16] top.tmr_regs_tb.regs.tmr.cntdwn[15] top.tmr_regs_tb.regs.tmr.cntdwn[14] top.tmr_regs_tb.regs.tmr.cntdwn[13] top.tmr_regs_tb.regs.tmr.cntdwn[12] top.tmr_regs_tb.regs.tmr.cntdwn[11] top.tmr_regs_tb.regs.tmr.cntdwn[10] top.tmr_regs_tb.regs.tmr.cntdwn[9] top.tmr_regs_tb.regs.tmr.cntdwn[8] top.tmr_regs_tb.regs.tmr.cntdwn[7] top.tmr_regs_tb.regs.tmr.cntdwn[6] top.tmr_regs_tb.regs.tmr.cntdwn[5] top.tmr_regs_tb.regs.tmr.cntdwn[4] top.tmr_regs_tb.regs.tmr.cntdwn[3] top.tmr_regs_tb.regs.tmr.cntdwn[2] top.tmr_regs_tb.regs.tmr.cntdwn[1] top.tmr_regs_tb.regs.tmr.cntdwn[0]
+@200
+-
+-Register output
+@28
+top.tmr_regs_tb.oe
+#{top.tmr_regs_tb.oreg[1:0]} top.tmr_regs_tb.oreg[1] top.tmr_regs_tb.oreg[0]
+@22
+#{top.tmr_regs_tb.odat[31:0]} top.tmr_regs_tb.odat[31] top.tmr_regs_tb.odat[30] top.tmr_regs_tb.odat[29] top.tmr_regs_tb.odat[28] top.tmr_regs_tb.odat[27] top.tmr_regs_tb.odat[26] top.tmr_regs_tb.odat[25] top.tmr_regs_tb.odat[24] top.tmr_regs_tb.odat[23] top.tmr_regs_tb.odat[22] top.tmr_regs_tb.odat[21] top.tmr_regs_tb.odat[20] top.tmr_regs_tb.odat[19] top.tmr_regs_tb.odat[18] top.tmr_regs_tb.odat[17] top.tmr_regs_tb.odat[16] top.tmr_regs_tb.odat[15] top.tmr_regs_tb.odat[14] top.tmr_regs_tb.odat[13] top.tmr_regs_tb.odat[12] top.tmr_regs_tb.odat[11] top.tmr_regs_tb.odat[10] top.tmr_regs_tb.odat[9] top.tmr_regs_tb.odat[8] top.tmr_regs_tb.odat[7] top.tmr_regs_tb.odat[6] top.tmr_regs_tb.odat[5] top.tmr_regs_tb.odat[4] top.tmr_regs_tb.odat[3] top.tmr_regs_tb.odat[2] top.tmr_regs_tb.odat[1] top.tmr_regs_tb.odat[0]
+@200
+-
+@28
+top.tmr_regs_tb.int
+[pattern_trace] 1
+[pattern_trace] 0

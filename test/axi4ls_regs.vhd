@@ -57,6 +57,7 @@ architecture behaviour of axi4ls_regs is
 		     we      : out std_logic;
 		     wreg    : out natural range 0 to REG_NR - 1;
 		     wval    : out std_logic_vector(31 downto 0);
+		     re      : out std_logic;
 		     rreg    : out natural range 0 to REG_NR - 1;
 		     rval    : in  std_logic_vector(31 downto 0));
 	end component axi4l_slave;
@@ -64,6 +65,7 @@ architecture behaviour of axi4ls_regs is
 	signal we_a   : std_logic;
 	signal wreg_a : natural range 0 to 2;
 	signal wval_a : std_logic_vector(31 downto 0);
+	signal re_a   : std_logic;
 	signal rreg_a : natural range 0 to 2;
 	signal rval_a : std_logic_vector(31 downto 0);
 
@@ -77,9 +79,9 @@ begin
 	                             wstrb, bvalid, bready, bresp, arvalid,
 	                             arready, araddr, arprot, rvalid,
 	                             rready, rdata, rresp, we_a, wreg_a,
-	                             wval_a, rreg_a, rval_a);
+	                             wval_a, re_a, rreg_a, rval_a);
 
-	comb: process (areset_n, we_a, wreg_a, wval_a, rreg_a) is
+	comb: process (areset_n, we_a, wreg_a, wval_a, re_a, rreg_a) is
 	variable val_p : std_logic_vector(31 downto 0) := (others => '0');
 	variable reg0_p: std_logic_vector(31 downto 0) := (others => '0');
 	variable reg1_p: std_logic_vector(31 downto 0) := (others => '0');
@@ -100,12 +102,14 @@ begin
 				end case;
 			end if;
 
-			case (rreg_a) is
-				when 0      => val_p := reg0_p;
-				when 1      => val_p := reg1_p;
-				when 2      => val_p := reg2_p;
-				when others => NULL;
-			end case;
+			if (rising_edge(re_a)) then
+				case (rreg_a) is
+					when 0      => val_p := reg0_p;
+					when 1      => val_p := reg1_p;
+					when 2      => val_p := reg2_p;
+					when others => NULL;
+				end case;
+			end if;
 		end if;
 
 		rval_a  <= val_p;

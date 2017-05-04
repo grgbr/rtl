@@ -37,6 +37,7 @@ package axi4 is
 		     we      : out std_logic;
 		     wreg    : out natural range 0 to REG_NR - 1;
 		     wval    : out std_logic_vector(31 downto 0);
+		     re      : out std_logic;
 		     rreg    : out natural range 0 to REG_NR - 1;
 		     rval    : in  std_logic_vector(31 downto 0));
 	end component axi4l_slave;
