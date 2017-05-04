@@ -9,15 +9,15 @@ STAGING := $(BUILD)/staging
 include ghdl.mk
 #include modelsim.mk
 
-axils_timer-cosim := $(TEST)/axils_timer_cosim.py $(call libobj,time)
+axi4ls_timer-cosim := $(TEST)/axi4ls_timer_cosim.py $(call libobj,time)
 
 # Amba library
-amba-lib          := $(SRC)/axi_pkg.vhdl $(SRC)/axil_slave.vhdl
+amba-lib           := $(SRC)/axi4_pkg.vhd $(SRC)/axi4l_slave.vhd
 
 # Time library
-time-lib          := $(SRC)/axils_timer.vhdl \
-                     $(SRC)/timer.vhdl \
-                     $(call libobj,amba)
+time-lib           := $(SRC)/axi4ls_timer.vhd \
+                      $(SRC)/timer.vhd \
+                      $(call libobj,amba)
 
 $(foreach s,$(subst -cosim,,\
   $(filter %-cosim,$(.VARIABLES))),$(eval $(call _mkcosim,$(s))))

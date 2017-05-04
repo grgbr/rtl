@@ -13,7 +13,7 @@ from cocotb.triggers import RisingEdge
 from cocotb.result import TestFailure
 from cocotb.regression import TestFactory
 
-class AxilSlaveBusMonitor(BusMonitor):
+class Axi4lSlaveBusMonitor(BusMonitor):
 	"""
 	AXI lite slave bus monitor
 	"""
@@ -132,7 +132,7 @@ class AxilSlaveBusMonitor(BusMonitor):
 			self._recv(transaction)
 
 
-class AxilSlaveTB:
+class Axi4lSlaveTB:
 	"""
 	AXI lite slave test bench
 	"""
@@ -141,7 +141,7 @@ class AxilSlaveTB:
 		self._entity = entity
 		self._sbrd = Scoreboard(entity,
 		                        fail_immediately=fail_immediately)
-		self._omon = AxilSlaveBusMonitor(entity, self._sbrd)
+		self._omon = Axi4lSlaveBusMonitor(entity, self._sbrd)
 
 
 	@cocotb.coroutine
@@ -443,10 +443,10 @@ class AxilSlaveTB:
 
 
 @cocotb.coroutine
-def axils_test_reset(dut, clk_delay, reset_hold, post_delay):
+def axi4ls_test_reset(dut, clk_delay, reset_hold, post_delay):
 	""" AXI lite slave asynchronous reset / synchronous de-reset"""
-	tb = AxilSlaveTB(dut, exit_on_fail)
-	tb = AxilSlaveTB(dut, exit_on_fail)
+	tb = Axi4lSlaveTB(dut, exit_on_fail)
+	tb = Axi4lSlaveTB(dut, exit_on_fail)
 
 	tb.start_clock(clk_t, clk_delay)
 	yield Timer(clk_t)
@@ -455,11 +455,11 @@ def axils_test_reset(dut, clk_delay, reset_hold, post_delay):
 
 
 @cocotb.coroutine
-def axils_test_wrxact(dut, addr, resp, addr_delay, data_delay, resp_delay,
+def axi4ls_test_wrxact(dut, addr, resp, addr_delay, data_delay, resp_delay,
                       post_cycles):
 	""" AXI lite slave write transaction"""
-	tb = AxilSlaveTB(dut, exit_on_fail)
-	tb = AxilSlaveTB(dut, exit_on_fail)
+	tb = Axi4lSlaveTB(dut, exit_on_fail)
+	tb = Axi4lSlaveTB(dut, exit_on_fail)
 
 	yield tb.start(clk_t)
 
@@ -474,10 +474,10 @@ def axils_test_wrxact(dut, addr, resp, addr_delay, data_delay, resp_delay,
 
 
 @cocotb.coroutine
-def axils_test_valid_rdxact(dut, addr_delay, data_delay, post_cycles):
-	""" AXI lite slave read transaction"""
-	tb = AxilSlaveTB(dut, exit_on_fail)
-	tb = AxilSlaveTB(dut, exit_on_fail)
+def axi4ls_test_valid_rdxact(dut, addr_delay, data_delay, post_cycles):
+	""" AXI lite slave valid read transaction"""
+	tb = Axi4lSlaveTB(dut, exit_on_fail)
+	tb = Axi4lSlaveTB(dut, exit_on_fail)
 
 	yield tb.start(clk_t)
 
@@ -500,10 +500,10 @@ def axils_test_valid_rdxact(dut, addr_delay, data_delay, post_cycles):
 
 
 @cocotb.coroutine
-def axils_test_invalid_rdxact(dut, addr_delay, data_delay, post_cycles):
-	""" AXI lite slave read transaction"""
-	tb = AxilSlaveTB(dut, exit_on_fail)
-	tb = AxilSlaveTB(dut, exit_on_fail)
+def axi4ls_test_invalid_rdxact(dut, addr_delay, data_delay, post_cycles):
+	""" AXI lite slave invalid read transaction"""
+	tb = Axi4lSlaveTB(dut, exit_on_fail)
+	tb = Axi4lSlaveTB(dut, exit_on_fail)
 
 	yield tb.start(clk_t)
 
@@ -517,13 +517,13 @@ clk_t = 2000
 xact_nr = 3
 exit_on_fail=True
 
-fact = TestFactory(axils_test_reset)
+fact = TestFactory(axi4ls_test_reset)
 fact.add_option("clk_delay",  [clk_t / 2, clk_t, 3 * clk_t / 2])
 fact.add_option("reset_hold", [clk_t / 4, clk_t / 2, clk_t / 3, clk_t])
 fact.add_option("post_delay", [clk_t / 4, clk_t / 2, clk_t / 3, clk_t])
 fact.generate_tests()
 
-fact = TestFactory(axils_test_wrxact)
+fact = TestFactory(axi4ls_test_wrxact)
 fact.add_option("addr",        [0, 1, 4, 6, 8, 11])
 fact.add_option("addr_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
 fact.add_option("data_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
@@ -532,7 +532,7 @@ fact.add_option("resp",        [0])
 fact.add_option("post_cycles", [0, 1, 4])
 fact.generate_tests("valid_")
 
-fact = TestFactory(axils_test_wrxact)
+fact = TestFactory(axi4ls_test_wrxact)
 fact.add_option("addr",        [12])
 fact.add_option("addr_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
 fact.add_option("data_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
@@ -541,13 +541,13 @@ fact.add_option("resp",        [3])
 fact.add_option("post_cycles", [0, 1, 4])
 fact.generate_tests("invalid_")
 
-fact = TestFactory(axils_test_valid_rdxact)
+fact = TestFactory(axi4ls_test_valid_rdxact)
 fact.add_option("addr_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
 fact.add_option("data_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
 fact.add_option("post_cycles", [0, 1, 4])
 fact.generate_tests()
 
-fact = TestFactory(axils_test_invalid_rdxact)
+fact = TestFactory(axi4ls_test_invalid_rdxact)
 fact.add_option("addr_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
 fact.add_option("data_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
 fact.add_option("post_cycles", [0, 1, 4])

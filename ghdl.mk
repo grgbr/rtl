@@ -47,7 +47,7 @@ $(BUILD)/%-obj93.cf: $(STAMPS)/ghdl.installed Makefile
 	        --work=$(patsubst $(BUILD)/%-obj93.cf,%,$@) \
 	        --workdir=$(BUILD) \
 	        -P$(BUILD) \
-	        $(filter %.vhdl,$^)
+	        $(filter %.vhd,$^)
 
 ################################################################################
 # ghdl VHDL simulator build and install with default mcode backend

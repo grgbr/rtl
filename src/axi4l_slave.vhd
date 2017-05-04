@@ -33,10 +33,11 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-library amba;
-use amba.axi.all;
 
-entity axil_slave is
+library amba;
+use amba.axi4.all;
+
+entity axi4l_slave is
 	generic(REG_NR: natural);
 	port(aclk    : in  std_logic;
 	     areset_n: in  std_logic;
@@ -65,13 +66,13 @@ entity axil_slave is
 	     wval    : out std_logic_vector(31 downto 0);
 	     rreg    : out natural range 0 to REG_NR - 1;
 	     rval    : in  std_logic_vector(31 downto 0));
-end entity axil_slave;
+end entity axi4l_slave;
 
-architecture behaviour of axil_slave is
+architecture behaviour of axi4l_slave is
 	-- Declare state machine states in human readable form. Encode state
 	-- values according to a gray encoding scheme for better resilience to
 	-- glitches and enhanced power saving.
-	type state is                     (STAT_RST, STAT_REQ, STAT_RESP);
+	type state                     is (STAT_RST, STAT_REQ, STAT_RESP);
 	attribute enum_encoding         : string;
 	attribute enum_encoding of state: type is "00 01 11";
 

@@ -78,7 +78,7 @@ $(STAMPS)/%-lib.built: Makefile | $(STAMPS) $(BUILD)/amba-lib
 		-logfile $(patsubst $(dir $@)%-lib.built,\
 		                    $(BUILD)/%-lib.log,$@) \
 		-work $(patsubst $(dir $@)%-lib.built,%,$@) \
-		$(filter %.vhdl,$^)
+		$(filter %.vhd,$^)
 	touch $@
 
 # Create library and map library file to friendly logical name
