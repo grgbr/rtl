@@ -121,7 +121,6 @@ class Axi4lSlaveBusMonitor(BusMonitor):
 	def _monitor_recv(self):
 		while True:
 			yield Timer(clk_t / 16)
-			#yield Timer(1)
 
 			# build transaction from the entire list of declared
 			# signals

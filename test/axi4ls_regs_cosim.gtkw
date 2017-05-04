@@ -1,0 +1,89 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Thu May  4 16:24:09 2017
+[*]
+[dumpfile] "/home/greg/dev/rtl/build/axi4ls_regs_cosim.ghw"
+[dumpfile_mtime] "Thu May  4 14:46:19 2017"
+[dumpfile_size] 2069928
+[savefile] "/home/greg/dev/rtl/test/axi4ls_regs_cosim.gtkw"
+[timestart] 15819300000
+[size] 1855 1056
+[pos] -1 -1
+*-22.489542 15827926000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.axi4ls_regs.
+[treeopen] top.axi4ls_regs.regs_a.
+[sst_width] 225
+[signals_width] 207
+[sst_expanded] 1
+[sst_vpaned_height] 320
+@28
+top.axi4ls_regs.areset_n
+top.axi4ls_regs.aclk
+@200
+-
+-AXI write
+-address
+@28
+top.axi4ls_regs.awvalid
+top.axi4ls_regs.awready
+@22
+#{top.axi4ls_regs.awaddr[31:0]} top.axi4ls_regs.awaddr[31] top.axi4ls_regs.awaddr[30] top.axi4ls_regs.awaddr[29] top.axi4ls_regs.awaddr[28] top.axi4ls_regs.awaddr[27] top.axi4ls_regs.awaddr[26] top.axi4ls_regs.awaddr[25] top.axi4ls_regs.awaddr[24] top.axi4ls_regs.awaddr[23] top.axi4ls_regs.awaddr[22] top.axi4ls_regs.awaddr[21] top.axi4ls_regs.awaddr[20] top.axi4ls_regs.awaddr[19] top.axi4ls_regs.awaddr[18] top.axi4ls_regs.awaddr[17] top.axi4ls_regs.awaddr[16] top.axi4ls_regs.awaddr[15] top.axi4ls_regs.awaddr[14] top.axi4ls_regs.awaddr[13] top.axi4ls_regs.awaddr[12] top.axi4ls_regs.awaddr[11] top.axi4ls_regs.awaddr[10] top.axi4ls_regs.awaddr[9] top.axi4ls_regs.awaddr[8] top.axi4ls_regs.awaddr[7] top.axi4ls_regs.awaddr[6] top.axi4ls_regs.awaddr[5] top.axi4ls_regs.awaddr[4] top.axi4ls_regs.awaddr[3] top.axi4ls_regs.awaddr[2] top.axi4ls_regs.awaddr[1] top.axi4ls_regs.awaddr[0]
+@200
+-data
+@28
+top.axi4ls_regs.wvalid
+top.axi4ls_regs.wready
+@22
+#{top.axi4ls_regs.wdata[31:0]} top.axi4ls_regs.wdata[31] top.axi4ls_regs.wdata[30] top.axi4ls_regs.wdata[29] top.axi4ls_regs.wdata[28] top.axi4ls_regs.wdata[27] top.axi4ls_regs.wdata[26] top.axi4ls_regs.wdata[25] top.axi4ls_regs.wdata[24] top.axi4ls_regs.wdata[23] top.axi4ls_regs.wdata[22] top.axi4ls_regs.wdata[21] top.axi4ls_regs.wdata[20] top.axi4ls_regs.wdata[19] top.axi4ls_regs.wdata[18] top.axi4ls_regs.wdata[17] top.axi4ls_regs.wdata[16] top.axi4ls_regs.wdata[15] top.axi4ls_regs.wdata[14] top.axi4ls_regs.wdata[13] top.axi4ls_regs.wdata[12] top.axi4ls_regs.wdata[11] top.axi4ls_regs.wdata[10] top.axi4ls_regs.wdata[9] top.axi4ls_regs.wdata[8] top.axi4ls_regs.wdata[7] top.axi4ls_regs.wdata[6] top.axi4ls_regs.wdata[5] top.axi4ls_regs.wdata[4] top.axi4ls_regs.wdata[3] top.axi4ls_regs.wdata[2] top.axi4ls_regs.wdata[1] top.axi4ls_regs.wdata[0]
+@200
+-response
+@28
+top.axi4ls_regs.bvalid
+top.axi4ls_regs.bready
+#{top.axi4ls_regs.bresp[1:0]} top.axi4ls_regs.bresp[1] top.axi4ls_regs.bresp[0]
+@200
+-internal
+@28
+top.axi4ls_regs.regs_a.wcur_stat_a
+@200
+-
+-registers
+@28
+top.axi4ls_regs.we_a
+top.axi4ls_regs.regs_a.wreg
+@22
+#{top.axi4ls_regs.regs_a.wval[31:0]} top.axi4ls_regs.regs_a.wval[31] top.axi4ls_regs.regs_a.wval[30] top.axi4ls_regs.regs_a.wval[29] top.axi4ls_regs.regs_a.wval[28] top.axi4ls_regs.regs_a.wval[27] top.axi4ls_regs.regs_a.wval[26] top.axi4ls_regs.regs_a.wval[25] top.axi4ls_regs.regs_a.wval[24] top.axi4ls_regs.regs_a.wval[23] top.axi4ls_regs.regs_a.wval[22] top.axi4ls_regs.regs_a.wval[21] top.axi4ls_regs.regs_a.wval[20] top.axi4ls_regs.regs_a.wval[19] top.axi4ls_regs.regs_a.wval[18] top.axi4ls_regs.regs_a.wval[17] top.axi4ls_regs.regs_a.wval[16] top.axi4ls_regs.regs_a.wval[15] top.axi4ls_regs.regs_a.wval[14] top.axi4ls_regs.regs_a.wval[13] top.axi4ls_regs.regs_a.wval[12] top.axi4ls_regs.regs_a.wval[11] top.axi4ls_regs.regs_a.wval[10] top.axi4ls_regs.regs_a.wval[9] top.axi4ls_regs.regs_a.wval[8] top.axi4ls_regs.regs_a.wval[7] top.axi4ls_regs.regs_a.wval[6] top.axi4ls_regs.regs_a.wval[5] top.axi4ls_regs.regs_a.wval[4] top.axi4ls_regs.regs_a.wval[3] top.axi4ls_regs.regs_a.wval[2] top.axi4ls_regs.regs_a.wval[1] top.axi4ls_regs.regs_a.wval[0]
+#{top.axi4ls_regs.stor0_a[31:0]} top.axi4ls_regs.stor0_a[31] top.axi4ls_regs.stor0_a[30] top.axi4ls_regs.stor0_a[29] top.axi4ls_regs.stor0_a[28] top.axi4ls_regs.stor0_a[27] top.axi4ls_regs.stor0_a[26] top.axi4ls_regs.stor0_a[25] top.axi4ls_regs.stor0_a[24] top.axi4ls_regs.stor0_a[23] top.axi4ls_regs.stor0_a[22] top.axi4ls_regs.stor0_a[21] top.axi4ls_regs.stor0_a[20] top.axi4ls_regs.stor0_a[19] top.axi4ls_regs.stor0_a[18] top.axi4ls_regs.stor0_a[17] top.axi4ls_regs.stor0_a[16] top.axi4ls_regs.stor0_a[15] top.axi4ls_regs.stor0_a[14] top.axi4ls_regs.stor0_a[13] top.axi4ls_regs.stor0_a[12] top.axi4ls_regs.stor0_a[11] top.axi4ls_regs.stor0_a[10] top.axi4ls_regs.stor0_a[9] top.axi4ls_regs.stor0_a[8] top.axi4ls_regs.stor0_a[7] top.axi4ls_regs.stor0_a[6] top.axi4ls_regs.stor0_a[5] top.axi4ls_regs.stor0_a[4] top.axi4ls_regs.stor0_a[3] top.axi4ls_regs.stor0_a[2] top.axi4ls_regs.stor0_a[1] top.axi4ls_regs.stor0_a[0]
+#{top.axi4ls_regs.stor1_a[31:0]} top.axi4ls_regs.stor1_a[31] top.axi4ls_regs.stor1_a[30] top.axi4ls_regs.stor1_a[29] top.axi4ls_regs.stor1_a[28] top.axi4ls_regs.stor1_a[27] top.axi4ls_regs.stor1_a[26] top.axi4ls_regs.stor1_a[25] top.axi4ls_regs.stor1_a[24] top.axi4ls_regs.stor1_a[23] top.axi4ls_regs.stor1_a[22] top.axi4ls_regs.stor1_a[21] top.axi4ls_regs.stor1_a[20] top.axi4ls_regs.stor1_a[19] top.axi4ls_regs.stor1_a[18] top.axi4ls_regs.stor1_a[17] top.axi4ls_regs.stor1_a[16] top.axi4ls_regs.stor1_a[15] top.axi4ls_regs.stor1_a[14] top.axi4ls_regs.stor1_a[13] top.axi4ls_regs.stor1_a[12] top.axi4ls_regs.stor1_a[11] top.axi4ls_regs.stor1_a[10] top.axi4ls_regs.stor1_a[9] top.axi4ls_regs.stor1_a[8] top.axi4ls_regs.stor1_a[7] top.axi4ls_regs.stor1_a[6] top.axi4ls_regs.stor1_a[5] top.axi4ls_regs.stor1_a[4] top.axi4ls_regs.stor1_a[3] top.axi4ls_regs.stor1_a[2] top.axi4ls_regs.stor1_a[1] top.axi4ls_regs.stor1_a[0]
+#{top.axi4ls_regs.stor2_a[31:0]} top.axi4ls_regs.stor2_a[31] top.axi4ls_regs.stor2_a[30] top.axi4ls_regs.stor2_a[29] top.axi4ls_regs.stor2_a[28] top.axi4ls_regs.stor2_a[27] top.axi4ls_regs.stor2_a[26] top.axi4ls_regs.stor2_a[25] top.axi4ls_regs.stor2_a[24] top.axi4ls_regs.stor2_a[23] top.axi4ls_regs.stor2_a[22] top.axi4ls_regs.stor2_a[21] top.axi4ls_regs.stor2_a[20] top.axi4ls_regs.stor2_a[19] top.axi4ls_regs.stor2_a[18] top.axi4ls_regs.stor2_a[17] top.axi4ls_regs.stor2_a[16] top.axi4ls_regs.stor2_a[15] top.axi4ls_regs.stor2_a[14] top.axi4ls_regs.stor2_a[13] top.axi4ls_regs.stor2_a[12] top.axi4ls_regs.stor2_a[11] top.axi4ls_regs.stor2_a[10] top.axi4ls_regs.stor2_a[9] top.axi4ls_regs.stor2_a[8] top.axi4ls_regs.stor2_a[7] top.axi4ls_regs.stor2_a[6] top.axi4ls_regs.stor2_a[5] top.axi4ls_regs.stor2_a[4] top.axi4ls_regs.stor2_a[3] top.axi4ls_regs.stor2_a[2] top.axi4ls_regs.stor2_a[1] top.axi4ls_regs.stor2_a[0]
+@28
+top.axi4ls_regs.regs_a.rreg
+@22
+#{top.axi4ls_regs.regs_a.rval[31:0]} top.axi4ls_regs.regs_a.rval[31] top.axi4ls_regs.regs_a.rval[30] top.axi4ls_regs.regs_a.rval[29] top.axi4ls_regs.regs_a.rval[28] top.axi4ls_regs.regs_a.rval[27] top.axi4ls_regs.regs_a.rval[26] top.axi4ls_regs.regs_a.rval[25] top.axi4ls_regs.regs_a.rval[24] top.axi4ls_regs.regs_a.rval[23] top.axi4ls_regs.regs_a.rval[22] top.axi4ls_regs.regs_a.rval[21] top.axi4ls_regs.regs_a.rval[20] top.axi4ls_regs.regs_a.rval[19] top.axi4ls_regs.regs_a.rval[18] top.axi4ls_regs.regs_a.rval[17] top.axi4ls_regs.regs_a.rval[16] top.axi4ls_regs.regs_a.rval[15] top.axi4ls_regs.regs_a.rval[14] top.axi4ls_regs.regs_a.rval[13] top.axi4ls_regs.regs_a.rval[12] top.axi4ls_regs.regs_a.rval[11] top.axi4ls_regs.regs_a.rval[10] top.axi4ls_regs.regs_a.rval[9] top.axi4ls_regs.regs_a.rval[8] top.axi4ls_regs.regs_a.rval[7] top.axi4ls_regs.regs_a.rval[6] top.axi4ls_regs.regs_a.rval[5] top.axi4ls_regs.regs_a.rval[4] top.axi4ls_regs.regs_a.rval[3] top.axi4ls_regs.regs_a.rval[2] top.axi4ls_regs.regs_a.rval[1] top.axi4ls_regs.regs_a.rval[0]
+@200
+-
+-AXI read
+-address
+@28
+top.axi4ls_regs.arvalid
+top.axi4ls_regs.arready
+@22
+#{top.axi4ls_regs.araddr[31:0]} top.axi4ls_regs.araddr[31] top.axi4ls_regs.araddr[30] top.axi4ls_regs.araddr[29] top.axi4ls_regs.araddr[28] top.axi4ls_regs.araddr[27] top.axi4ls_regs.araddr[26] top.axi4ls_regs.araddr[25] top.axi4ls_regs.araddr[24] top.axi4ls_regs.araddr[23] top.axi4ls_regs.araddr[22] top.axi4ls_regs.araddr[21] top.axi4ls_regs.araddr[20] top.axi4ls_regs.araddr[19] top.axi4ls_regs.araddr[18] top.axi4ls_regs.araddr[17] top.axi4ls_regs.araddr[16] top.axi4ls_regs.araddr[15] top.axi4ls_regs.araddr[14] top.axi4ls_regs.araddr[13] top.axi4ls_regs.araddr[12] top.axi4ls_regs.araddr[11] top.axi4ls_regs.araddr[10] top.axi4ls_regs.araddr[9] top.axi4ls_regs.araddr[8] top.axi4ls_regs.araddr[7] top.axi4ls_regs.araddr[6] top.axi4ls_regs.araddr[5] top.axi4ls_regs.araddr[4] top.axi4ls_regs.araddr[3] top.axi4ls_regs.araddr[2] top.axi4ls_regs.araddr[1] top.axi4ls_regs.araddr[0]
+@200
+-data
+@28
+top.axi4ls_regs.rvalid
+top.axi4ls_regs.rready
+@22
+#{top.axi4ls_regs.rdata[31:0]} top.axi4ls_regs.rdata[31] top.axi4ls_regs.rdata[30] top.axi4ls_regs.rdata[29] top.axi4ls_regs.rdata[28] top.axi4ls_regs.rdata[27] top.axi4ls_regs.rdata[26] top.axi4ls_regs.rdata[25] top.axi4ls_regs.rdata[24] top.axi4ls_regs.rdata[23] top.axi4ls_regs.rdata[22] top.axi4ls_regs.rdata[21] top.axi4ls_regs.rdata[20] top.axi4ls_regs.rdata[19] top.axi4ls_regs.rdata[18] top.axi4ls_regs.rdata[17] top.axi4ls_regs.rdata[16] top.axi4ls_regs.rdata[15] top.axi4ls_regs.rdata[14] top.axi4ls_regs.rdata[13] top.axi4ls_regs.rdata[12] top.axi4ls_regs.rdata[11] top.axi4ls_regs.rdata[10] top.axi4ls_regs.rdata[9] top.axi4ls_regs.rdata[8] top.axi4ls_regs.rdata[7] top.axi4ls_regs.rdata[6] top.axi4ls_regs.rdata[5] top.axi4ls_regs.rdata[4] top.axi4ls_regs.rdata[3] top.axi4ls_regs.rdata[2] top.axi4ls_regs.rdata[1] top.axi4ls_regs.rdata[0]
+@200
+-response
+@28
+#{top.axi4ls_regs.rresp[1:0]} top.axi4ls_regs.rresp[1] top.axi4ls_regs.rresp[0]
+@200
+-internal
+@28
+top.axi4ls_regs.regs_a.rcur_stat_a
+[pattern_trace] 1
+[pattern_trace] 0

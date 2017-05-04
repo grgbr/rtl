@@ -10,14 +10,19 @@ include ghdl.mk
 #include modelsim.mk
 
 axi4ls_timer-cosim := $(TEST)/axi4ls_timer_cosim.py $(call libobj,time)
+axi4ls_regs-cosim  := $(TEST)/axi4ls_regs_cosim.py $(call libobj,tbench)
 
-# Amba library
-amba-lib           := $(SRC)/axi4_pkg.vhd $(SRC)/axi4l_slave.vhd
+# Test bench library
+tbench-lib         := $(TEST)/axi4ls_regs.vhd \
+                      $(call libobj,amba)
 
 # Time library
 time-lib           := $(SRC)/axi4ls_timer.vhd \
                       $(SRC)/timer.vhd \
                       $(call libobj,amba)
+
+# Amba library
+amba-lib           := $(SRC)/axi4_pkg.vhd $(SRC)/axi4l_slave.vhd
 
 $(foreach s,$(subst -cosim,,\
   $(filter %-cosim,$(.VARIABLES))),$(eval $(call _mkcosim,$(s))))

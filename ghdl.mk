@@ -4,6 +4,15 @@ cocotb_libs   := $(BUILD)/cocotb_libs
 cocotb_libdir := $(cocotb_libs)/build/libs/$(shell uname -m)
 libvpi        := $(cocotb_libdir)/libvpi.so
 
+ghdl-flags    := --vital-checks \
+                 -Wbinding \
+                 -Wlibrary \
+                 -Wvital-generic \
+                 -Wbody \
+                 -Wspecs \
+                 -Wunused \
+                 -Werror
+
 define _runcosim
 	env PYTHONPATH="$(TEST):$(cocotb_libdir):$(COCOTB)" \
 	    LD_LIBRARY_PATH="$(cocotb_libdir)" \
@@ -13,7 +22,7 @@ define _runcosim
 	    TOPLEVEL=$(subst _cosim.ghw,,$(subst $(BUILD)/,,$(1))) \
 	    TOPLEVEL_LANG=vhdl \
 	    $(GHDL) -r --ieee=standard --syn-binding --work=$(2) \
-	        --workdir=$(BUILD) -P$(BUILD) \
+	        --workdir=$(BUILD) $(ghdl-flags) -P$(BUILD) \
 	        $(subst _cosim.ghw,,$(subst $(BUILD)/,,$(1))) \
 	        --vpi=$(libvpi) --wave=$(1)
 	mv results.xml $(BUILD)
@@ -42,10 +51,11 @@ $(libvpi): | $(BUILD)/cocotb
 		SIM=ghdl SIM_ROOT=$(COCOTB) USER_DIR=$(cocotb_libs)
 
 # libraries analysis default rule
-$(BUILD)/%-obj93.cf: $(STAMPS)/ghdl.installed Makefile
+$(BUILD)/%-obj93.cf: $(STAMPS)/ghdl.installed Makefile ghdl.mk
 	$(GHDL) -a --ieee=standard \
 	        --work=$(patsubst $(BUILD)/%-obj93.cf,%,$@) \
 	        --workdir=$(BUILD) \
+	        $(ghdl-flags) \
 	        -P$(BUILD) \
 	        $(filter %.vhd,$^)
 
