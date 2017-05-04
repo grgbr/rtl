@@ -474,33 +474,43 @@ def axils_test_wrxact(dut, addr, resp, addr_delay, data_delay, resp_delay,
 
 
 @cocotb.coroutine
-def axils_test_rdxact(dut, addr, resp, addr_delay, data_delay, post_cycles):
+def axils_test_valid_rdxact(dut, addr_delay, data_delay, post_cycles):
 	""" AXI lite slave read transaction"""
 	tb = AxilSlaveTB(dut, exit_on_fail)
 	tb = AxilSlaveTB(dut, exit_on_fail)
 
 	yield tb.start(clk_t)
 
-	for t in range(0, xact_nr):
-		yield tb.rdxact(addr, 0, 0, resp, 0)
+	for t in range(0, xact_nr - 1):
+		data = (random.getrandbits(32),
+		        random.getrandbits(32),
+		        random.getrandbits(32))
+
+		yield tb.wrxact(0, 0, data[0], 0, 0, 0);
+		yield tb.wrxact(4, 0, data[1], 0, 0, 0);
+		yield tb.wrxact(8, 0, data[2], 0, 0, 0);
 		for e in range(0, post_cycles):
 			yield RisingEdge(dut.aclk)
 
-	data = random.getrandbits(32)
-        
-	yield tb.wrxact(addr, 0, data, 0, 0, 0)
+		yield tb.rdxact(0, 0, data[0], 0, 0)
+		yield tb.rdxact(4, 0, data[1], 0, 0)
+		yield tb.rdxact(8, 0, data[2], 0, 0)
+		for e in range(0, post_cycles):
+			yield RisingEdge(dut.aclk)
+
+
+@cocotb.coroutine
+def axils_test_invalid_rdxact(dut, addr_delay, data_delay, post_cycles):
+	""" AXI lite slave read transaction"""
+	tb = AxilSlaveTB(dut, exit_on_fail)
+	tb = AxilSlaveTB(dut, exit_on_fail)
+
+	yield tb.start(clk_t)
 
 	for t in range(0, xact_nr - 1):
-		yield tb.rdxact(addr, 0, data, resp, 0)
+		yield tb.rdxact(14, 0, random.getrandbits(32), 3, 0)
 		for e in range(0, post_cycles):
 			yield RisingEdge(dut.aclk)
-		data = data + 1
-		yield tb.wrxact(addr, 0, data, 0, 0, 0)
-
-	yield tb.rdxact(addr, 0, data, resp, 0)
-	for e in range(0, post_cycles):
-		yield RisingEdge(dut.aclk)
-
 
 random.seed(time.time())
 clk_t = 2000
@@ -531,10 +541,14 @@ fact.add_option("resp",        [3])
 fact.add_option("post_cycles", [0, 1, 4])
 fact.generate_tests("invalid_")
 
-fact = TestFactory(axils_test_rdxact)
-fact.add_option("addr",        [0, 4, 8])
+fact = TestFactory(axils_test_valid_rdxact)
 fact.add_option("addr_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
 fact.add_option("data_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
-fact.add_option("resp",        [0])
 fact.add_option("post_cycles", [0, 1, 4])
-fact.generate_tests("valid_")
+fact.generate_tests()
+
+fact = TestFactory(axils_test_invalid_rdxact)
+fact.add_option("addr_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
+fact.add_option("data_delay",  [0, clk_t / 2, 3 * clk_t / 4, 5 * clk_t / 4])
+fact.add_option("post_cycles", [0, 1, 4])
+fact.generate_tests()
